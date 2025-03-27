@@ -1,4 +1,4 @@
-include .env
+-include .env
 bash-nx:
 	docker exec -it nginx_proxy bash
 bash-app:
@@ -14,3 +14,6 @@ down:
 rs:
 	make down
 	make up
+app-create:
+	cp .env.example .env
+	docker compose run app bash -c "composer install && php artisan key:generate"

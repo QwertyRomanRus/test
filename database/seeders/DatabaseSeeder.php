@@ -14,9 +14,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Chat::factory()
-            ->count(100)
-            ->hasMessages(rand(10, 100))
-            ->create();
+        Chat::withoutEvents(function () {
+            Chat::factory()
+                ->count(100)
+                ->hasMessages(rand(10, 100))
+                ->create();
+        });
     }
 }

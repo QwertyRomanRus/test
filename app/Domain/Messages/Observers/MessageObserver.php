@@ -13,7 +13,7 @@ class MessageObserver
     {
     }
 
-    public function saved(Message $message): void
+    public function created(Message $message): void
     {
         $this->updateLastMessageChatAction->execute($message);
     }

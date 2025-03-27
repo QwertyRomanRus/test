@@ -9,20 +9,20 @@ use Tests\TestCase;
 
 class MessagesControllerTest extends TestCase
 {
-//    public function test_post_api_v1_messages_201(): void
-//    {
-//        $text = 'some text';
-//        $senderId = 1;
-//        $request = MessageFactoryRequest::new()->make([
-//            'text' => $text,
-//            'senderId' => $senderId,
-//        ]);
-//
-//        $this->post('/api/v1/messages', $request)
-//            ->assertJsonPath('data.text', $text)
-//            ->assertJsonPath('data.senderId', $senderId)
-//            ->assertStatus(201);
-//    }
+    public function test_post_api_v1_messages_201(): void
+    {
+        $text = 'some text';
+        $senderId = 1;
+        $request = MessageFactoryRequest::new()->make([
+            'text' => $text,
+            'senderId' => $senderId,
+        ]);
+
+        $this->post('/api/v1/messages', $request)
+            ->assertJsonPath('data.text', $text)
+            ->assertJsonPath('data.senderId', $senderId)
+            ->assertStatus(201);
+    }
 
     public function test_post_api_v1_messages_with_observer_and_chat(): void
     {

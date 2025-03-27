@@ -29,7 +29,7 @@ class Chat extends BaseModel
     public const MAX_LAST_MESSAGE_LENGTH = 100;
 
     protected $casts = [
-        'timestamp' => 'datetime',
+        'last_message_at' => 'datetime',
     ];
 
     protected static function newFactory(): ChatsFactory

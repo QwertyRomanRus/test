@@ -3,7 +3,6 @@
 namespace Tests\Http\ApiV1\Modules\Chats;
 
 use App\Domain\Chats\Models\Chat;
-use App\Domain\Common\PaginationData;
 use Tests\TestCase;
 
 class ChatsControllerTest extends TestCase
@@ -15,7 +14,7 @@ class ChatsControllerTest extends TestCase
             ->create();
 
         $this->get('/api/v1/chats')
-            ->assertJsonCount(PaginationData::DEFAULT_LIMIT, 'data')
+            ->assertJsonCount(20, 'data')
             ->assertJsonPath('meta.last_page', 2);
     }
 

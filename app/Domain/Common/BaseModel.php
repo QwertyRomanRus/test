@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 abstract class BaseModel extends Model
 {
-    protected $perPage = PaginationData::DEFAULT_LIMIT;
+    protected $perPage = 20;
 
     protected string $defaultSortableField = 'id';
     protected string $defaultSortableDirection = DirectionEnum::ASC->value;

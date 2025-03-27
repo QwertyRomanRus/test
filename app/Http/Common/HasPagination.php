@@ -24,12 +24,12 @@ trait HasPagination
         );
     }
 
-    public function getLimit(): int
+    public function getLimit(): ?int
     {
         return $this->paginationData->limit;
     }
 
-    public function getOffset(): int
+    public function getOffset(): ?int
     {
         return $this->paginationData->offset;
     }
